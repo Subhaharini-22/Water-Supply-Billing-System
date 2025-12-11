@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management - Water Billing System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2>💧 Water Billing System - Admin</h2>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="users.html" class="active">User Management</a>
+                <a href="requests.html">Requests</a>
+                <a href="transactions.html">Transactions</a>
+                <a href="revenue.html">Revenue</a>
+                <button onclick="logout()" class="btn btn-secondary">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>User Management</h1>
+            <button class="btn btn-primary" onclick="showAddUserForm()">Add New User</button>
+        </div>
+
+        <div id="addUserModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" onclick="closeAddUserForm()">&times;</span>
+                <h2>Add New User</h2>
+                <form id="addUserForm" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Aadhaar Number</label>
+                        <input type="text" name="aadhaarNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label>House/Flat Number</label>
+                        <input type="text" name="houseFlatNumber" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Role</label>
+                        <select name="role" required>
+                            <option value="CUSTOMER">Customer</option>
+                            <option value="ADMIN">Admin</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Daily Water Limit (liters)</label>
+                        <input type="number" name="dailyWaterLimit" value="500" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Aadhaar Proof Image</label>
+                        <input type="file" name="aadhaarFile" accept="image/*">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add User</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table id="usersTable" class="data-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Aadhaar Number</th>
+                        <th>House/Flat Number</th>
+                        <th>Aadhaar Proof</th>
+                        <th>Role</th>
+                        <th>Daily Limit</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody">
+                    <tr><td colspan="7">Loading users...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/admin-users.js"></script>
+</body>
+</html>
+

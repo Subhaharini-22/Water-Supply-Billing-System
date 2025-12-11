@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction History - Water Billing System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2>💧 Water Billing System - Admin</h2>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="users.html">User Management</a>
+                <a href="requests.html">Requests</a>
+                <a href="transactions.html" class="active">Transactions</a>
+                <a href="revenue.html">Revenue</a>
+                <button onclick="logout()" class="btn btn-secondary">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Billing Transaction History</h1>
+        <div class="table-container">
+            <table id="transactionsTable" class="data-table">
+                <thead>
+                    <tr>
+                        <th>User</th>
+                        <th>Bill Month</th>
+                        <th>Amount</th>
+                        <th>Payment Date</th>
+                        <th>Mode</th>
+                        <th>Transaction ID</th>
+                    </tr>
+                </thead>
+                <tbody id="transactionsTableBody">
+                    <tr><td colspan="6">Loading transactions...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/admin-transactions.js"></script>
+</body>
+</html>
+

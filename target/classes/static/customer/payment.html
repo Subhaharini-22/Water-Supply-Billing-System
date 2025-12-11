@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment - Water Billing System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2>💧 Water Billing System</h2>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="bills.html">Bills</a>
+                <a href="usage.html">Usage History</a>
+                <a href="payment.html" class="active">Payment</a>
+                <button onclick="logout()" class="btn btn-secondary">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Online Payment</h1>
+        
+        <div class="payment-container">
+            <div class="payment-box">
+                <h3>Select Bill to Pay</h3>
+                <select id="billSelect" class="form-control">
+                    <option value="">Select a bill...</option>
+                </select>
+                
+                <div id="billDetails" class="bill-details" style="display: none;">
+                    <h4>Bill Details</h4>
+                    <p><strong>Bill Month:</strong> <span id="billMonth"></span></p>
+                    <p><strong>Base Amount:</strong> ₹<span id="baseAmount"></span></p>
+                    <p><strong>Extra Charge:</strong> ₹<span id="extraCharge"></span></p>
+                    <p><strong>Late Fee:</strong> ₹<span id="lateFee"></span></p>
+                    <p><strong>Total Amount:</strong> ₹<span id="totalAmount"></span></p>
+                </div>
+
+                <div class="qr-section">
+                    <h3>Scan QR Code to Pay</h3>
+                    <img src="../images/upi-qr-placeholder.svg" alt="UPI QR Code" class="qr-code">
+                    <p class="qr-info">Scan this QR code with any UPI app to make payment</p>
+                </div>
+
+                <button id="paymentBtn" class="btn btn-primary" onclick="completePayment()" disabled>
+                    Payment Completed
+                </button>
+                
+                <div id="paymentMessage" class="message"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/customer-payment.js"></script>
+</body>
+</html>
+

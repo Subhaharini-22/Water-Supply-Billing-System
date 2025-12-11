@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard - Water Billing System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2>💧 Water Billing System</h2>
+            <div class="nav-links">
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="bills.html">Bills</a>
+                <a href="usage.html">Usage History</a>
+                <a href="payment.html">Payment</a>
+                <a href="../change-password.html" style="color: #ffc107;">Change Password</a>
+                <button onclick="logout()" class="btn btn-secondary">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Welcome, <span id="userName"></span></h1>
+        
+        <div class="dashboard-grid">
+            <div class="card">
+                <h3>Daily Water Usage</h3>
+                <div id="dailyUsageChart" class="chart-container">
+                    <p>Loading usage data...</p>
+                </div>
+                <div class="usage-summary">
+                    <p><strong>Today's Usage:</strong> <span id="todayUsage">-</span> liters</p>
+                    <p><strong>Daily Limit:</strong> <span id="dailyLimit">-</span> liters</p>
+                    <p id="limitWarning" class="warning" style="display: none;">⚠️ You have exceeded your daily limit!</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Monthly Bill Summary</h3>
+                <div id="billSummary">
+                    <p>Loading bill information...</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Unpaid Bills</h3>
+                <div id="unpaidBills">
+                    <p>Loading unpaid bills...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/customer-dashboard.js"></script>
+</body>
+</html>
+

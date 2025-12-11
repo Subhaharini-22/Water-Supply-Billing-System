@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Bills - Water Billing System</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <h2>💧 Water Billing System</h2>
+            <div class="nav-links">
+                <a href="dashboard.html">Dashboard</a>
+                <a href="bills.html" class="active">Bills</a>
+                <a href="usage.html">Usage History</a>
+                <a href="payment.html">Payment</a>
+                <button onclick="logout()" class="btn btn-secondary">Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>My Bills</h1>
+        <div id="billsList" class="bills-container">
+            <p>Loading bills...</p>
+        </div>
+    </div>
+
+    <script src="../js/auth.js"></script>
+    <script src="../js/customer-bills.js"></script>
+</body>
+</html>
+
